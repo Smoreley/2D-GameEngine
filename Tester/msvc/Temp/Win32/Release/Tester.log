@@ -1,0 +1,4 @@
+﻿  TesterMain.cpp
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification
+  Tester.vcxproj -> C:\Users\Sauron-LP-S\Desktop\Dev\Tester\msvc\\..\build\Win32\Release\Tester.exe
+  Tester.vcxproj -> C:\Users\Sauron-LP-S\Desktop\Dev\Tester\msvc\\..\build\Win32\Release\Tester.pdb (Full PDB)
