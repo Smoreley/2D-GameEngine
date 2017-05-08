@@ -1,13 +1,17 @@
 #include <iostream>
-#include "CEngine.h"
+#include "Engine.h"
 
-using namespace Beserk;
+//using namespace Beserk;
 
 bool TestMe() {
 	std::cout << "Testing Program" << std::endl;
-
+	std::cout << "size of bool: " << sizeof(bool) << std::endl;
+	std::cout << "size of unsigned char: " << sizeof(unsigned char) << std::endl;
+	std::cout << "size of unsigned int: " << sizeof(unsigned int) << std::endl;
+	std::cout << "size of double: " << sizeof(double) << std::endl;
+	
 	return EXIT_SUCCESS;
-}
+};
 
 //int main(int argc, char* args[]) {
 //
@@ -32,4 +36,4 @@ bool TestMe() {
 //	std::cin.ignore();
 //
 //	return 0;
-//}
+//};

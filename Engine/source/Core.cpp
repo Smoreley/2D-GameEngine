@@ -1,35 +1,39 @@
 // Core Entry Point
-#include "CEngine.h"
-#include "CRender.h"
+#include "Engine.h"
+#include "Render.h"
 #include <iostream>
 
 //using namespace Beserk;
 
 #define SAFE_DELETE(p) {if (p) { delete(p) : (p)=NULL; }}
 
-Beserk::CEngine *gp_engine;
-Beserk::CRender *gp_RenderSystem;
+Beserk::Engine *g_pEngine;
+Beserk::Render *g_pRenderSystem;
 
 #include <GLFW\glfw3.h>
 
 int main(int argc, char* args[]) {
-	gp_engine = new Beserk::CEngine();
+	g_pEngine = new Beserk::Engine();
 
 	bool quit = false;
 
-	gp_RenderSystem = new Beserk::CRender();
-	gp_RenderSystem->Init();
+	g_pRenderSystem = new Beserk::Render();
+	g_pRenderSystem->Init();
 
-	while (!glfwWindowShouldClose(gp_RenderSystem->GetWindow())) {
+
+	g_pEngine->Test();
+
+
+	while (!glfwWindowShouldClose(g_pRenderSystem->GetWindow())) {
 
 		glfwPollEvents();
 
 
-		gp_RenderSystem->TestRenderer();
+		g_pRenderSystem->TestRenderer();
 
 	}
 
-	gp_RenderSystem->Destory();
+	g_pRenderSystem->Destory();
 
 
 	return EXIT_SUCCESS;

@@ -3,11 +3,11 @@
 
 namespace Beserk {
 
-	class CShader
+	class Shader
 	{
 	public:
-		CShader();
-		~CShader();
+		Shader();
+		~Shader();
 
 		bool CreateShader();
 

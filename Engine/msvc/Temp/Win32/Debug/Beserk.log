@@ -1,2 +1,11 @@
-﻿  CRender.cpp
+﻿  BeserkStd.cpp
+  Generating Code...
+  Compiling...
+  ZipFile.cpp
+  ActorFactory.cpp
+  Actor.cpp
+  Generating Code...
+BeserkStd.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+ActorFactory.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+Actor.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
   Beserk.vcxproj -> C:\Users\Sauron-LP-S\Desktop\Dev\Engine\msvc\\..\build\Win32\Debug\Beserk.lib

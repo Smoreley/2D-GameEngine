@@ -2,11 +2,11 @@
 #include "IComponent.h"
 
 namespace Beserk {
-	class CCamera : public IComponent
+	class Camera : public IComponent
 	{
 	public:
 		static unsigned int camera_count;	// The number of cameras in the scene
-		static CCamera active_camera;		// Currently active camera
+		static Camera active_camera;		// Currently active camera
 
 		int window_width;
 		int window_height;
@@ -15,8 +15,8 @@ namespace Beserk {
 		float near_clip_plane;
 		float far_clip_plane;
 
-		CCamera();
-		~CCamera();
+		Camera();
+		~Camera();
 
 		bool SetAsActiveCamera();	// Sets this camera as the active camera to render out of
 

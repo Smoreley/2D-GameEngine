@@ -1,9 +1,13 @@
 c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\beserk.pdb
 c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\beserk.idb
-c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\ccamera.obj
-c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\cengine.obj
+c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\actor.obj
+c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\actorfactory.obj
+c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\camera.obj
+c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\engine.obj
 c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\core.obj
-c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\crender.obj
+c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\render.obj
+c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\string.obj
+c:\users\sauron-lp-s\desktop\dev\engine\msvc\temp\win32\debug\zipfile.obj
 c:\users\sauron-lp-s\desktop\dev\engine\build\win32\debug\beserk.lib
 c:\users\sauron-lp-s\desktop\dev\engine\msvc\\..\build\win32\debug\beserk.pdb
 c:\users\sauron-lp-s\desktop\dev\engine\msvc\\..\build\win32\debug\beserk.lib

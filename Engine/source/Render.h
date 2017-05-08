@@ -12,7 +12,7 @@ namespace Beserk {
 
 	// Render Class
 
-	class CRender
+	class Render
 	{
 	public:
 		//CRender();

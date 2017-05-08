@@ -1,7 +1,7 @@
 #pragma once
 
 namespace Beserk {
-	class CTest
+	class Test
 	{
 	public:
 

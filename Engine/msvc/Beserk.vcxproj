@@ -130,19 +130,30 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\source\CCamera.cpp" />
-    <ClCompile Include="..\source\CEngine.cpp" />
+    <ClCompile Include="..\source\Actor.cpp" />
+    <ClCompile Include="..\source\ActorFactory.cpp" />
+    <ClCompile Include="..\source\BeserkStd.cpp" />
+    <ClCompile Include="..\source\Camera.cpp" />
+    <ClCompile Include="..\source\Engine.cpp" />
     <ClCompile Include="..\source\Core.cpp" />
-    <ClCompile Include="..\source\CRender.cpp" />
+    <ClCompile Include="..\source\Render.cpp" />
+    <ClCompile Include="..\source\ZipFile.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\source\CEngine.h" />
-    <ClInclude Include="..\source\CCamera.h" />
-    <ClInclude Include="..\source\CEntity.h" />
-    <ClInclude Include="..\source\CRender.h" />
-    <ClInclude Include="..\source\CShader.h" />
-    <ClInclude Include="..\source\CTest.h" />
+    <ClInclude Include="..\source\Actor.h" />
+    <ClInclude Include="..\source\ActorComponent.h" />
+    <ClInclude Include="..\source\ActorFactory.h" />
+    <ClInclude Include="..\source\BeserkStd.h" />
+    <ClInclude Include="..\source\Engine.h" />
+    <ClInclude Include="..\source\Camera.h" />
+    <ClInclude Include="..\source\Entity.h" />
+    <ClInclude Include="..\source\Interfaces.h" />
+    <ClInclude Include="..\source\Render.h" />
+    <ClInclude Include="..\source\ResourceCache.h" />
+    <ClInclude Include="..\source\Shader.h" />
+    <ClInclude Include="..\source\Test.h" />
     <ClInclude Include="..\source\IComponent.h" />
+    <ClInclude Include="..\source\ZipFile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

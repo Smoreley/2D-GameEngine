@@ -3,13 +3,12 @@
 extern bool TestMe();
 
 namespace Beserk {
-
 	
-	class CEngine
+	class Engine
 	{
 	public:
-		CEngine();
-		~CEngine();
+		Engine();
+		~Engine();
 
 		void Test();
 
@@ -18,4 +17,4 @@ namespace Beserk {
 	};
 }
 
-extern Beserk::CEngine *gp_engine;
+extern Beserk::Engine *g_pEngine;

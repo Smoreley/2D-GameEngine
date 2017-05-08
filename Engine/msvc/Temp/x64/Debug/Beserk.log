@@ -1,4 +1,46 @@
-﻿  CRender.cpp
+﻿  ZipFile.cpp
+c:\users\sauron-lp-s\desktop\dev\engine\source\string.h(68): warning C4311: 'reinterpret_cast': pointer truncation from 'void *const ' to 'unsigned long'
+  String.cpp
+c:\users\sauron-lp-s\desktop\dev\engine\source\string.h(68): warning C4311: 'reinterpret_cast': pointer truncation from 'void *const ' to 'unsigned long'
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(13): error C2143: syntax error: missing ';' before '<'
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(14): error C2143: syntax error: missing ';' before '<'
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(16): error C2143: syntax error: missing ';' before '<'
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(16): error C2059: syntax error: '<'
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(17): error C2143: syntax error: missing ';' before '<'
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(17): error C2059: syntax error: '<'
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(24): error C2143: syntax error: missing ')' before '<'
+  c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(26): note: see reference to class template instantiation 'SortBy_SharedPtr_Content<T>' being compiled
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(24): error C2143: syntax error: missing ';' before '<'
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(24): error C2059: syntax error: '<'
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(24): error C2059: syntax error: ')'
+c:\users\sauron-lp-s\desktop\dev\engine\source\interfaces.h(25): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  Render.cpp
   Core.cpp
+  Engine.cpp
+  Camera.cpp
+  ActorFactory.cpp
+c:\users\sauron-lp-s\desktop\dev\engine\source\string.h(68): warning C4311: 'reinterpret_cast': pointer truncation from 'void *const ' to 'unsigned long'
+c:\users\sauron-lp-s\desktop\dev\engine\source\actorfactory.h(19): error C3646: 'm_lastActorId': unknown override specifier
+c:\users\sauron-lp-s\desktop\dev\engine\source\actorfactory.h(19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\sauron-lp-s\desktop\dev\engine\source\actorfactory.h(21): error C3646: 'GetNextActorId': unknown override specifier
+c:\users\sauron-lp-s\desktop\dev\engine\source\actorfactory.h(21): error C2059: syntax error: '('
+c:\users\sauron-lp-s\desktop\dev\engine\source\actorfactory.h(21): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  Actor.cpp
+c:\users\sauron-lp-s\desktop\dev\engine\source\string.h(68): warning C4311: 'reinterpret_cast': pointer truncation from 'void *const ' to 'unsigned long'
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(14): error C2061: syntax error: identifier 'ActorId'
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(17): error C2065: 'ComponentId': undeclared identifier
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(17): error C2065: 'StrongActorComponentPtr': undeclared identifier
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(17): error C2923: 'std::map': 'ComponentId' is not a valid template type argument for parameter '_Kty'
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(17): error C2923: 'std::map': 'StrongActorComponentPtr' is not a valid template type argument for parameter '_Ty'
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(17): error C3203: 'less': unspecialized class template can't be used as a template argument for template parameter '_Pr', expected a real type
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\map(70): error C3203: 'pair': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(25): error C3646: 'GetId': unknown override specifier
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(25): error C2059: syntax error: '('
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(25): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(30): error C2061: syntax error: identifier 'StrongActorComponentPtr'
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(35): error C2061: syntax error: identifier 'ComponentId'
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(70): error C3646: 'm_id': unknown override specifier
+c:\users\sauron-lp-s\desktop\dev\engine\source\actor.h(70): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Generating Code...
-  Beserk.vcxproj -> C:\Users\Sauron-LP-S\Desktop\Dev\Engine\msvc\\..\build\x64\Debug\Beserk.lib

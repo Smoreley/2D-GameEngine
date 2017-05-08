@@ -1,5 +1,5 @@
 #pragma once
-#include "CEntity.h"
+#include "Entity.h"
 //class CEntity;
 
 namespace Beserk {
@@ -9,7 +9,7 @@ namespace Beserk {
 		IComponent();
 		~IComponent();
 
-		CEntity *parent_entity;
+		Entity *parent_entity;
 
 		virtual void Start() = 0;
 		virtual void Update() = 0;

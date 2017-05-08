@@ -1,4 +1,4 @@
-#include "CRender.h"
+#include "Render.h"
 
 /* Include glew (helps in loading openGL and gives us access to higher versions) */
 #define GLEW_STATIC
@@ -8,6 +8,15 @@
 #include <GLFW/glfw3.h>
 #include <stdlib.h>
 
+#include <iostream>
+
+void static APIENTRY opengl_debug_callback(
+	GLenum source, GLenum type, GLuint id, GLenum severity,
+	GLsizei length, const GLchar* message, const void* userParm) {
+
+	std::cout << "I was called " << message << std::endl;
+
+}
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
 	// Hit escape key to exit window
@@ -18,11 +27,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 namespace Beserk {
 
-	bool CRender::Init() {
+	bool Render::Init() {
 
 		window_parms wind_data;
-		wind_data.height = 480;
-		wind_data.width = 640;
+		wind_data.height = 540;
+		wind_data.width = 960;
 		//wind_data.title = new char[32];
 		wind_data.title = "All the things";
 		const char* tempor = wind_data.title;
@@ -45,11 +54,8 @@ namespace Beserk {
 		//glfwWindowHint(GLFW_DECORATED, GL_FALSE);
 
 		/*GLFWwindow* window;*/
-
 		window = glfwCreateWindow(wind_data.width, wind_data.height,  tempor, NULL, NULL);
 		//delete[] wind_data.title;
-
-
 
 		// If failed to create window
 		if (!window) {
@@ -68,15 +74,19 @@ namespace Beserk {
 			return EXIT_FAILURE;
 		}
 
+		// Debug
+		glEnable(GL_DEBUG_OUTPUT);
+		glDebugMessageCallback(opengl_debug_callback, nullptr);
+
 		return true;
 	}
 
-	void CRender::Destory() {
+	void Render::Destory() {
 		glfwTerminate();
 	}
 
 	// Just proof this is working
-	bool CRender::TestRenderer() {
+	bool Render::TestRenderer() {
 
 		// Clear
 		glClearColor(0.5f, 0.5f, 0.5f, 1.0f);

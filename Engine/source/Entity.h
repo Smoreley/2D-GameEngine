@@ -12,13 +12,13 @@ struct prs
 };
 
 namespace Beserk {
-	class CEntity
+	class Entity
 	{
 	public:
 		prs transform;
 
-		CEntity();
-		~CEntity();
+		Entity();
+		~Entity();
 
 		void Start(void);
 		void Update(const double dt);

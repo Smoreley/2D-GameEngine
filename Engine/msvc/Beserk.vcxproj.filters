@@ -13,45 +13,102 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
-    <Filter Include="Header Files\Rendering">
+    <Filter Include="Header Files\old">
+      <UniqueIdentifier>{2bb0fa31-556a-437b-b3a3-126bc448b5c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Other">
+      <UniqueIdentifier>{d99ebfd2-cd2b-420e-b5ad-df7a60ce6eb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Other">
+      <UniqueIdentifier>{01ef8828-2f6e-485f-b257-51afb7471072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Cache">
+      <UniqueIdentifier>{d9418e34-6cbb-47fa-8bb6-fde00e59ca23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Cache">
+      <UniqueIdentifier>{4c96966f-5a69-4e05-9db3-e6b60847ddaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Actor">
+      <UniqueIdentifier>{c692e12a-ab83-4c1c-9f0b-3c43b15f1baa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Actor">
+      <UniqueIdentifier>{ccaa7e89-8225-4c5a-bc2a-25286c296952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Display">
+      <UniqueIdentifier>{d66d10c4-534e-4b97-9c8d-0a0b178bfee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Display">
       <UniqueIdentifier>{09be87c8-17cf-4ddf-ad85-bbba06809c06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\source\CTest.h">
+    <ClInclude Include="..\source\Actor.h">
+      <Filter>Header Files\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\ActorComponent.h">
+      <Filter>Header Files\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Camera.h">
+      <Filter>Header Files\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Render.h">
+      <Filter>Header Files\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\source\CCamera.h">
-      <Filter>Header Files\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="..\source\CRender.h">
-      <Filter>Header Files\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="..\source\CEntity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\source\CEngine.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\source\Shader.h">
+      <Filter>Header Files\Display</Filter>
     </ClInclude>
     <ClInclude Include="..\source\IComponent.h">
+      <Filter>Header Files\old</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Entity.h">
+      <Filter>Header Files\old</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Test.h">
+      <Filter>Header Files\old</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Interfaces.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\source\CShader.h">
-      <Filter>Header Files\Rendering</Filter>
+    <ClInclude Include="..\source\ActorFactory.h">
+      <Filter>Header Files\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\BeserkStd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\ZipFile.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\ResourceCache.h">
+      <Filter>Header Files\Cache</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\Core.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\CRender.cpp">
+    <ClCompile Include="..\source\Actor.cpp">
+      <Filter>Source Files\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\CCamera.cpp">
+    <ClCompile Include="..\source\ActorFactory.cpp">
+      <Filter>Source Files\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\ZipFile.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\BeserkStd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\CEngine.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\source\Camera.cpp">
+      <Filter>Source Files\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Render.cpp">
+      <Filter>Source Files\Display</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
