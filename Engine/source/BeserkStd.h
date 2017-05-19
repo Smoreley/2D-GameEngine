@@ -1,6 +1,5 @@
 #pragma once
 
-
 // C RunTime Header Files
 #include <cstdlib>
 
@@ -16,12 +15,15 @@
 
 #include "String.h"
 
+#include <TinyXML2\tinyxml2.h>
+
 using std::shared_ptr;
 using std::weak_ptr;
 using std::static_pointer_cast;
 using std::dynamic_pointer_cast;
 
-
+using namespace std;
+using namespace tinyxml2;
 
 #include "Interfaces.h"
 
@@ -36,7 +38,6 @@ struct Options {
 	// Sound
 	float m_Volume;
 };
-
 
 
 // ue4 type stuff

@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
-    <Filter Include="Header Files\old">
-      <UniqueIdentifier>{2bb0fa31-556a-437b-b3a3-126bc448b5c0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Other">
       <UniqueIdentifier>{d99ebfd2-cd2b-420e-b5ad-df7a60ce6eb3}</UniqueIdentifier>
     </Filter>
@@ -40,6 +37,12 @@
     <Filter Include="Header Files\Display">
       <UniqueIdentifier>{09be87c8-17cf-4ddf-ad85-bbba06809c06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Old">
+      <UniqueIdentifier>{2bb0fa31-556a-437b-b3a3-126bc448b5c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components">
+      <UniqueIdentifier>{7c5b91b4-a0be-40fb-b9a6-01b2898458ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\Actor.h">
@@ -51,9 +54,6 @@
     <ClInclude Include="..\source\Camera.h">
       <Filter>Header Files\Display</Filter>
     </ClInclude>
-    <ClInclude Include="..\source\Render.h">
-      <Filter>Header Files\Display</Filter>
-    </ClInclude>
     <ClInclude Include="..\source\Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -61,13 +61,13 @@
       <Filter>Header Files\Display</Filter>
     </ClInclude>
     <ClInclude Include="..\source\IComponent.h">
-      <Filter>Header Files\old</Filter>
+      <Filter>Header Files\Old</Filter>
     </ClInclude>
     <ClInclude Include="..\source\Entity.h">
-      <Filter>Header Files\old</Filter>
+      <Filter>Header Files\Old</Filter>
     </ClInclude>
     <ClInclude Include="..\source\Test.h">
-      <Filter>Header Files\old</Filter>
+      <Filter>Header Files\Old</Filter>
     </ClInclude>
     <ClInclude Include="..\source\Interfaces.h">
       <Filter>Header Files</Filter>
@@ -83,6 +83,12 @@
     </ClInclude>
     <ClInclude Include="..\source\ResourceCache.h">
       <Filter>Header Files\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\TransformComponent.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Renderer.h">
+      <Filter>Header Files\Display</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -107,7 +113,10 @@
     <ClCompile Include="..\source\Camera.cpp">
       <Filter>Source Files\Display</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\Render.cpp">
+    <ClCompile Include="..\source\TransformComponent.cpp">
+      <Filter>Header Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Renderer.cpp">
       <Filter>Source Files\Display</Filter>
     </ClCompile>
   </ItemGroup>

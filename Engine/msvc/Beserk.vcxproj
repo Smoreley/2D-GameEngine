@@ -136,7 +136,8 @@
     <ClCompile Include="..\source\Camera.cpp" />
     <ClCompile Include="..\source\Engine.cpp" />
     <ClCompile Include="..\source\Core.cpp" />
-    <ClCompile Include="..\source\Render.cpp" />
+    <ClCompile Include="..\source\Renderer.cpp" />
+    <ClCompile Include="..\source\TransformComponent.cpp" />
     <ClCompile Include="..\source\ZipFile.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,11 +149,12 @@
     <ClInclude Include="..\source\Camera.h" />
     <ClInclude Include="..\source\Entity.h" />
     <ClInclude Include="..\source\Interfaces.h" />
-    <ClInclude Include="..\source\Render.h" />
+    <ClInclude Include="..\source\Renderer.h" />
     <ClInclude Include="..\source\ResourceCache.h" />
     <ClInclude Include="..\source\Shader.h" />
     <ClInclude Include="..\source\Test.h" />
     <ClInclude Include="..\source\IComponent.h" />
+    <ClInclude Include="..\source\TransformComponent.h" />
     <ClInclude Include="..\source\ZipFile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
