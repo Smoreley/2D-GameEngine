@@ -40,8 +40,11 @@
     <Filter Include="Header Files\Old">
       <UniqueIdentifier>{2bb0fa31-556a-437b-b3a3-126bc448b5c0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Components">
+    <Filter Include="Header Files\Actor\Components">
       <UniqueIdentifier>{7c5b91b4-a0be-40fb-b9a6-01b2898458ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Actor\Components">
+      <UniqueIdentifier>{a90db125-a6f0-4f7c-85d8-61582bdcc988}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -85,7 +88,7 @@
       <Filter>Header Files\Cache</Filter>
     </ClInclude>
     <ClInclude Include="..\source\TransformComponent.h">
-      <Filter>Header Files\Components</Filter>
+      <Filter>Header Files\Actor\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\source\Renderer.h">
       <Filter>Header Files\Display</Filter>
@@ -95,14 +98,8 @@
     <ClCompile Include="..\source\Core.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\Actor.cpp">
-      <Filter>Source Files\Actor</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\Engine.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\ActorFactory.cpp">
-      <Filter>Source Files\Actor</Filter>
     </ClCompile>
     <ClCompile Include="..\source\ZipFile.cpp">
       <Filter>Source Files\Cache</Filter>
@@ -113,11 +110,17 @@
     <ClCompile Include="..\source\Camera.cpp">
       <Filter>Source Files\Display</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\TransformComponent.cpp">
-      <Filter>Header Files\Components</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\Renderer.cpp">
       <Filter>Source Files\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\ActorFactory.cpp">
+      <Filter>Source Files\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Actor.cpp">
+      <Filter>Source Files\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\TransformComponent.cpp">
+      <Filter>Source Files\Actor\Components</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

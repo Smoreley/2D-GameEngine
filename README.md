@@ -8,4 +8,4 @@ Game Engine im building for personal projects and learning.
 * glew
 * glfw
 * glm
-
+* TinyXml2

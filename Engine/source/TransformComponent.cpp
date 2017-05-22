@@ -2,8 +2,6 @@
 #include "ActorComponent.h"
 #include "TransformComponent.h"
 
-using namespace Beserk;
-
 const char* TransformComponent::g_name = "TransformComponent";
 
 // Helper Functions

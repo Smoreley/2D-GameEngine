@@ -1,26 +1,42 @@
 #pragma once
 
-class TiXmlElemnt;
-
-//typedef std::basic_string<char> ActorType;
 typedef std::string ActorType;
+typedef unsigned int ActorId;
+typedef std::map<ComponentId, StrongActorComponentPtr> ActorComponents;
 
 class Actor
 {
 public:
-	explicit Actor(ActorId id);
-	~Actor();
+	explicit Actor(const ActorId id);		// Constructor
+	~Actor(void);
 
-	typedef std::map<ComponentId, StrongActorComponentPtr> ActorComponents;
+	bool Init(XMLElement* pData);
+	void PostInit();
+	void Destory();
+	void Update(unsigned int deltaMs);
 
-	bool Init();
-	void PostInit(void);
-	void Destroy(void);
-	void Update();
+	void AddComponent(StrongActorComponentPtr pComponent);
 
 	// Accessors
 	ActorId GetId(void) const { return m_id; }
-	ActorType GetType(void) const { return m_type; }
+	ActorType GetTyoe(void) const { return m_type; }
+
+	void GenerateXML();
+
+private:
+	ActorId m_id;
+	ActorComponents m_components;
+	ActorType m_type;
+
+	std::string m_resource;
+
+	friend class ActorFactory;
+};
+
+/* Old implementation of actor*/
+class Old_Actor
+{
+public:
 
 	const ActorComponents* GetComponents() { return &m_components; }
 
@@ -61,17 +77,12 @@ public:
 	}	// End-of Template
 
 private:
-
-	friend class ActorFactory;
 	
 	ActorId m_id;					// Unique id for the actor
 	ActorComponents m_components;	// All components this actor has
 	ActorType m_type;
 
 	std::string m_resource;			// The xml filre from which this actor was initialized
-
-
-
 
 	/* UE4 Implementation */
 	

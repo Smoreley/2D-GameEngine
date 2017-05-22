@@ -10,10 +10,14 @@
 #include <vector>
 #include <queue>
 #include <map>
+#include <assert.h>
 
 #include <iostream>
+#include <stdio.h>
+#include <tchar.h>
+#include <utility>
 
-#include "String.h"
+//#include "String.h"
 
 #include <TinyXML2\tinyxml2.h>
 
