@@ -13,11 +13,15 @@ struct TransformData
 	float scale_x;
 	float scale_y;
 	float scale_z;
+
+	TransformData() : pos_x(0), pos_y(0), pos_z(0) {};
 };
 
 class TransformComponent : public ActorComponent {
 public:
 	static const char* g_name;
+
+	TransformComponent(void) : m_transData() {}
 
 	virtual const char* VGetName() const { return g_name; }
 	virtual bool VInit(XMLElement* pData) override;

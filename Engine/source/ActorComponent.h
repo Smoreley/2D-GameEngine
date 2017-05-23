@@ -17,7 +17,10 @@ public:
 	static ComponentId GetIdFromName(const char* componentStr) {
 		//void* rawId = 
 		// TODO: Implement Hashing to get Id from Name
-		return 3;
+
+		// Simple Hash
+		hash<string> ptr_hash;
+		return ptr_hash(componentStr);
 	}
 
 	//static ComponentId GetIdFromName(const char* component_str) {

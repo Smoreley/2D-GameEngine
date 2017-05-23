@@ -26,10 +26,10 @@ int main(int argc, char* args[]) {
 
 	while (!glfwWindowShouldClose(g_pRenderSystem->GetWindow())) {
 
-		glfwPollEvents();
+		glfwPollEvents();					// Poll for events
 
 
-		g_pRenderSystem->TestRenderer();
+		g_pRenderSystem->TestRenderer();	// Render test
 
 	}
 

@@ -136,6 +136,7 @@
     <ClCompile Include="..\source\Camera.cpp" />
     <ClCompile Include="..\source\Engine.cpp" />
     <ClCompile Include="..\source\Core.cpp" />
+    <ClCompile Include="..\source\PhysicsComponent.cpp" />
     <ClCompile Include="..\source\Renderer.cpp" />
     <ClCompile Include="..\source\TransformComponent.cpp" />
     <ClCompile Include="..\source\ZipFile.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="..\source\Camera.h" />
     <ClInclude Include="..\source\Entity.h" />
     <ClInclude Include="..\source\Interfaces.h" />
+    <ClInclude Include="..\source\PhysicsComponent.h" />
     <ClInclude Include="..\source\Renderer.h" />
     <ClInclude Include="..\source\ResourceCache.h" />
     <ClInclude Include="..\source\Shader.h" />
