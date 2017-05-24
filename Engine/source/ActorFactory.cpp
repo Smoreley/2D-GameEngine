@@ -5,12 +5,14 @@
 /* Components */
 #include "ActorComponent.h"
 #include "TransformComponent.h"
+#include "PhysicsComponent.h"
 
 ActorFactory::ActorFactory(void) {
 
 	m_lastActorId = INVALID_ACTOR_ID;
 
 	m_componentFactory.Register<TransformComponent>(ActorComponent::GetIdFromName(TransformComponent::g_name));
+	m_componentFactory.Register<PhysicsComponent>(PhysicsComponent::GetIdFromName(PhysicsComponent::g_name));
 }
 
 StrongActorPtr ActorFactory::CreateActor(const char* actorResource, XMLElement* overrides, const ActorId id) {
@@ -18,7 +20,6 @@ StrongActorPtr ActorFactory::CreateActor(const char* actorResource, XMLElement* 
 	// Grab the root of the XML
 	//XMLElement *pRoot = overrides->get;
 	XMLNode* pRoot;
-
 
 	if (!pRoot) {
 		cout << "Failed to create actor from resource" << actorResource << endl;
@@ -29,13 +30,13 @@ StrongActorPtr ActorFactory::CreateActor(const char* actorResource, XMLElement* 
 	return rtn_val;
 }
 
-StrongActorPtr ActorFactory::CreateActor(const ActorId id) {
+StrongActorPtr ActorFactory::CreateActor(const char* actorResource, const ActorId id) {
 
 	XMLElement* overrides;
 
-	const char* file_name = "actorTest.xml";
+	// Load XML from file
 	XMLDocument actor_doc;
-	actor_doc.LoadFile(file_name);
+	actor_doc.LoadFile(actorResource);
 
 	// Grab the root of the XML
 	XMLElement *pRoot = actor_doc.RootElement();
@@ -47,14 +48,14 @@ StrongActorPtr ActorFactory::CreateActor(const ActorId id) {
 	else {
 		// Create actor instance
 		ActorId newActorId = id;
-		if (newActorId = INVALID_ACTOR_ID) {
+		if (newActorId == INVALID_ACTOR_ID) {
 			newActorId = GetNextActorId();
 		}
 
 		StrongActorPtr pActor(new Actor(newActorId));
 
 		if (!pActor->Init(pRoot)) {
-			cout << "Failed to initialize actor: " << file_name << endl;
+			cout << "Failed to initialize actor: " << actorResource << endl;
 			return StrongActorPtr();
 		}
 

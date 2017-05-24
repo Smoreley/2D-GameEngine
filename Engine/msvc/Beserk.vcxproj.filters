@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
-    <Filter Include="Header Files\Other">
-      <UniqueIdentifier>{d99ebfd2-cd2b-420e-b5ad-df7a60ce6eb3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Other">
-      <UniqueIdentifier>{01ef8828-2f6e-485f-b257-51afb7471072}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Cache">
       <UniqueIdentifier>{d9418e34-6cbb-47fa-8bb6-fde00e59ca23}</UniqueIdentifier>
     </Filter>
@@ -45,6 +39,12 @@
     </Filter>
     <Filter Include="Source Files\Actor\Components">
       <UniqueIdentifier>{a90db125-a6f0-4f7c-85d8-61582bdcc988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Processes">
+      <UniqueIdentifier>{573dd2f1-4e99-48b3-ac68-45cebf9c29fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Processes">
+      <UniqueIdentifier>{c827126b-251e-4eef-b658-214c8f6de5b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +96,15 @@
     <ClInclude Include="..\source\PhysicsComponent.h">
       <Filter>Header Files\Actor\Components</Filter>
     </ClInclude>
+    <ClInclude Include="..\source\Process.h">
+      <Filter>Header Files\Processes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\ProcessManager.h">
+      <Filter>Header Files\Processes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\View.h">
+      <Filter>Header Files\Display</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\Core.cpp">
@@ -127,6 +136,12 @@
     </ClCompile>
     <ClCompile Include="..\source\PhysicsComponent.cpp">
       <Filter>Source Files\Actor\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Process.cpp">
+      <Filter>Source Files\Processes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\ProcessManager.cpp">
+      <Filter>Source Files\Processes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

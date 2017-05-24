@@ -7,6 +7,8 @@ class ActorComponent;
 typedef unsigned int ActorId;
 typedef unsigned int ComponentId;
 
+typedef unsigned int DeltaTime;
+
 const ActorId INVALID_ACTOR_ID = 0;
 const ComponentId INVALID_COMPONENT_ID = 0;
 

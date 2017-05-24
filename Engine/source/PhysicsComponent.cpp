@@ -10,7 +10,6 @@ PhysicsComponent::PhysicsComponent(void) {
 	m_Velocity.y = 0;
 	m_Velocity.z = 0;
 
-
 }
 
 PhysicsComponent::~PhysicsComponent(void) {

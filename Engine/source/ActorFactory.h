@@ -46,7 +46,7 @@ public:
 		tinyxml2::XMLElement* overrides,
 		const ActorId serversActorId);
 
-	StrongActorPtr CreateActor(const ActorId id);		// My Testing one
+	StrongActorPtr CreateActor(const char* actorResource, const ActorId id);		// Creates and actor
 
 	virtual StrongActorComponentPtr VCreateComponent(XMLElement* pData);
 	void ModifyActor(StrongActorPtr pActor, XMLElement* overrides);
