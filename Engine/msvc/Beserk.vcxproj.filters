@@ -46,6 +46,9 @@
     <Filter Include="Source Files\Processes">
       <UniqueIdentifier>{c827126b-251e-4eef-b658-214c8f6de5b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Events">
+      <UniqueIdentifier>{5d3874d1-64ab-46ae-b33f-041e23e77141}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\Actor.h">
@@ -104,6 +107,12 @@
     </ClInclude>
     <ClInclude Include="..\source\View.h">
       <Filter>Header Files\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Event.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\EventManager.h">
+      <Filter>Header Files\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -37,22 +37,19 @@ int ProcessManager::UpdateProcesses(DeltaTime deltaMs) {
 				pCurrProcess->VSuccess();
 
 				StrongProcessPtr pChild = pCurrProcess->RemoveChild();
-				//if (pChild) {
-				//	AttachProcess(pChild);
-				//}
-
+				if (pChild) {
+					AttachProcess(pChild);
+				}
 				break;
 			}
 			case Process::FAILED:
 			{
 				pCurrProcess->VFailed();
-
 				break;
 			}
 			case Process::ABORTED:
 			{
 				pCurrProcess->VAbort();
-
 				break;
 			}
 			}
@@ -60,7 +57,6 @@ int ProcessManager::UpdateProcesses(DeltaTime deltaMs) {
 			// Remove process and destroy it
 			m_processes.erase(prevIt);
 		}
-
 
 	}
 
@@ -74,4 +70,24 @@ WeakProcessPtr ProcessManager::AttachProcess(StrongProcessPtr pProcess) {
 
 void ProcessManager::ClearAllProcesses(void) {
 	m_processes.clear();
+}
+
+void ProcessManager::AbortAllProcesses(bool immediate) {
+
+	ProcessList::iterator it = m_processes.begin();
+
+	while (it != m_processes.end()) {
+		ProcessList::iterator refIt = it;
+		++it;
+
+		StrongProcessPtr pProcess = *refIt;
+		if (pProcess->IsAlive()) {
+			pProcess->SetState(Process::ABORTED);
+			if (immediate) {
+				pProcess->VAbort();
+				m_processes.erase(refIt);
+			}
+		}
+	}
+
 }

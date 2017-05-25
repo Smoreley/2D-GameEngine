@@ -23,7 +23,7 @@ public:
 
 	TransformComponent(void) : m_transData() {}
 
-	virtual const char* VGetName() const { return g_name; }
+	virtual const char* VGetName() const override { return TransformComponent::g_name; }
 	virtual bool VInit(XMLElement* pData) override;
 	virtual void VGenerateXML(XMLDocument* pDoc) override;
 

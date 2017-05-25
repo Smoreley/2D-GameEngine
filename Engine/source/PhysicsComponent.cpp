@@ -28,13 +28,24 @@ bool PhysicsComponent::VInit(XMLElement* pData) {
 void PhysicsComponent::VGenerateXML(XMLDocument *pDoc) {
 	// TODO: Generate XMLdata and add element to document
 
+	XMLNode* pRoot = pDoc->RootElement();						// Root Element
+	XMLElement* pBaseElement = pDoc->NewElement(g_name);		// Transform Element
+
+	XMLElement* pShapeElement = pDoc->NewElement("Shape");		// Shape Element
+	pShapeElement->SetText(m_shape.c_str());
+
+	// Insert into Physics Element
+	pBaseElement->InsertEndChild(pShapeElement);
+
+	pRoot->InsertEndChild(pBaseElement);
+
 }
 
 void PhysicsComponent::VPostInit() {
 
 }
 
-void PhysicsComponent::VUpdate(float deltaMs) {
+void PhysicsComponent::VUpdate(DeltaTime deltaMs) {
 	// Get ptr to transform component
 	/*shared_ptr<TransformComponent> pTransComp = m_pOwner->GetComponent;*/
 }

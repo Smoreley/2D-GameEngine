@@ -52,6 +52,8 @@ protected:
 private:
 	State m_state;
 	StrongProcessPtr m_pChild;		// Child Process (if any)
+	
+	void SetState(State newState) { m_state = newState; }
 
 	friend class ProcessManager;
 };

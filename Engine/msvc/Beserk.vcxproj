@@ -151,6 +151,8 @@
     <ClInclude Include="..\source\Engine.h" />
     <ClInclude Include="..\source\Camera.h" />
     <ClInclude Include="..\source\Entity.h" />
+    <ClInclude Include="..\source\Event.h" />
+    <ClInclude Include="..\source\EventManager.h" />
     <ClInclude Include="..\source\Interfaces.h" />
     <ClInclude Include="..\source\PhysicsComponent.h" />
     <ClInclude Include="..\source\Process.h" />
