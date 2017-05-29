@@ -19,8 +19,18 @@ PhysicsComponent::~PhysicsComponent(void) {
 bool PhysicsComponent::VInit(XMLElement* pData) {
 	// TODO: Add to the physics manager
 
+	// Shape Data
+	XMLElement* pShapeElement = pData->FirstChildElement("Shape");
+	if (pShapeElement) {
+		m_shape = pShapeElement->FirstChild()->Value();
+	}
 
-	// TODO: Load data from XMLElement
+	// Material Data
+	// TODO: maybe move this information to a material component
+	XMLElement* pMaterialElement = pData->FirstChildElement("Material");
+	if (pMaterialElement) {
+		m_material = pMaterialElement->FirstChild()->Value();
+	}
 
 	return true;
 }
@@ -47,7 +57,16 @@ void PhysicsComponent::VPostInit() {
 
 void PhysicsComponent::VUpdate(DeltaTime deltaMs) {
 	// Get ptr to transform component
-	/*shared_ptr<TransformComponent> pTransComp = m_pOwner->GetComponent;*/
+	weak_ptr<TransformComponent> pTransformComponent = m_pOwner->GetComponent<TransformComponent>(TransformComponent::g_name);
+	if (pTransformComponent.expired()) {
+		cout << "No Transform Component" << endl;
+		return;
+	}
+
+	// Get strong pointer so we can accesst the reference object
+	auto strpTransformComponent = shared_ptr<TransformComponent>(pTransformComponent);
+
+
 }
 
 /* Adding Forces */

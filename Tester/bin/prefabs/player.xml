@@ -1,0 +1,24 @@
+<Actor type="Bacon" resource="SomeLoc.txt">
+  
+  <TransformComponent>
+    <Position x="0" y="3" z="20"/>
+    <Rotation y="12" p="16" r="32"/>
+  </TransformComponent>
+
+  <PhysicsComponent>
+    <Material>Glass</Material>
+    <Shape>Box</Shape>
+    <Data mass="1"/>
+  </PhysicsComponent>
+
+  <CollisionComponent>
+    <Shape>Box</Shape>
+    <IsTrigger>true</IsTrigger>
+    <Center x="0" y ="0" z="0"/>
+  </CollisionComponent>
+
+  <RenderComponent>
+    <Model>MyBox.fbx</Model>
+  </RenderComponent>
+  
+</Actor>

@@ -34,6 +34,7 @@ private:
 	vec3 m_Velocity;
 	vec3 m_AngularVelocity;
 
-	string m_shape;		// CollisionShape
+	string m_shape;		// Collision-Shape
+	string m_material;	// Material
 
 };

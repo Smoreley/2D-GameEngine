@@ -116,9 +116,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\source\Core.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -151,6 +148,9 @@
     </ClCompile>
     <ClCompile Include="..\source\ProcessManager.cpp">
       <Filter>Source Files\Processes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\App.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,7 +1,10 @@
 #pragma once
-
 #include "BeserkStd.h"
 
+/* Forward Declaration */
+class IEventData;
+
+/* Typedefs */
 typedef unsigned long EventType;
 typedef std::shared_ptr<IEventData> IEventDataPtr;
 

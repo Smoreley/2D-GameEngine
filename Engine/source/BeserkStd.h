@@ -31,6 +31,11 @@ using namespace tinyxml2;
 #include "Interfaces.h"
 
 
+
+// TODO: Moved to 
+#include "Actor.h"
+
+
 struct Options {
 	std::string m_name;
 

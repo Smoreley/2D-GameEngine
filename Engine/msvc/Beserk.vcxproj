@@ -95,6 +95,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
+      <PrecompiledHeaderFile>BeserkStd.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -135,7 +136,7 @@
     <ClCompile Include="..\source\BeserkStd.cpp" />
     <ClCompile Include="..\source\Camera.cpp" />
     <ClCompile Include="..\source\Engine.cpp" />
-    <ClCompile Include="..\source\Core.cpp" />
+    <ClCompile Include="..\source\App.cpp" />
     <ClCompile Include="..\source\PhysicsComponent.cpp" />
     <ClCompile Include="..\source\Process.cpp" />
     <ClCompile Include="..\source\ProcessManager.cpp" />
