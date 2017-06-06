@@ -54,7 +54,7 @@ namespace Beserk {
 		//glfwWindowHint(GLFW_DECORATED, GL_FALSE);
 
 		/*GLFWwindow* window;*/
-		window = glfwCreateWindow(wind_data.width, wind_data.height,  tempor, NULL, NULL);
+		window = glfwCreateWindow(wind_data.width, wind_data.height, tempor, NULL, NULL);
 		//delete[] wind_data.title;
 
 		// If failed to create window
@@ -82,6 +82,8 @@ namespace Beserk {
 	}
 
 	void Renderer::Destory() {
+		/* TODO: Renderer shouldn't necessarily be in charge of cleaning up glfw since it can also
+		be used for input */
 		glfwTerminate();
 	}
 

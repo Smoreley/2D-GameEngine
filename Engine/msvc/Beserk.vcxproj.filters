@@ -114,6 +114,9 @@
     <ClInclude Include="..\source\EventManager.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
+    <ClInclude Include="..\source\ZipFileResource.h">
+      <Filter>Header Files\Cache</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\Engine.cpp">
@@ -151,6 +154,9 @@
     </ClCompile>
     <ClCompile Include="..\source\App.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\ResourceCache.cpp">
+      <Filter>Source Files\Cache</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

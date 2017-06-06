@@ -41,3 +41,34 @@ struct SortBy_SharedPtr_Content {
 //private:
 //
 //};
+
+
+
+class Resource;
+class IResourceFile;
+class ResourceHandle;
+
+/* Resource Loader Interface */
+class IResourceLoader
+{
+public:
+	virtual std::string VGetPattern() = 0;
+	virtual bool VUseRawFile() = 0;
+	virtual bool VDiscardRawBufferAfterLoad() = 0;
+	virtual bool VAddNullZero() { return false; }
+	virtual unsigned int VGetLoadedResourceSize(char* rawBuffer, unsigned int rawSize) = 0;
+	virtual bool VLoadResource(char* rawBuffer, unsigned int rawSize, std::shared_ptr<ResourceHandle> handle) = 0;
+};
+
+/* Resoruce File Interface */
+class IResourceFile
+{
+public:
+	virtual bool VOpen() = 0;
+	virtual int VGetRawResourceSize(const Resource& r) = 0;
+	virtual int VGetRawResource(const Resource& r, char* buffer) = 0;
+	virtual int VGetNumResources() const = 0;
+	virtual std::string VGetResourceName(int num) const = 0;
+	virtual bool VUsingDevelopmentDirectories(void) const = 0;
+	virtual ~IResourceFile() {}
+};

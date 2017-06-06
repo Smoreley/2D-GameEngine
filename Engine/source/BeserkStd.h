@@ -31,10 +31,13 @@ using namespace tinyxml2;
 #include "Interfaces.h"
 
 
-
 // TODO: Moved to 
 #include "Actor.h"
 
+
+#define SAFE_DELETE(p) {if (p) { delete(p) : (p)=NULL; }}
+
+#define SAFE_DELETE_ARRAY(x) {if(x) {delete [] x; x = NULL; }}
 
 struct Options {
 	std::string m_name;

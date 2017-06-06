@@ -1,3 +1,4 @@
-﻿  PhysicsComponent.cpp
+﻿  ZipFile.cpp
+ResourceCache.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
 BeserkStd.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
   Beserk.vcxproj -> C:\Users\Sauron-LP-S\Desktop\Dev\Engine\msvc\\..\build\Win32\Debug\Beserk.lib

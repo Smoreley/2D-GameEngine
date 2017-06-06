@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward Declarations
+class Renderer;
+
 extern bool TestMe();
 
 namespace Beserk {
@@ -7,7 +10,7 @@ namespace Beserk {
 	class Engine
 	{
 	public:
-		/* Constructor/Destructor*/
+		/* Constructor/Destructor */
 		Engine();
 		~Engine();
 
@@ -15,9 +18,15 @@ namespace Beserk {
 		void Run(void);
 		void Update();
 
+
 		void Test();
 
+		Renderer& GetRenderer(void) { return *m_pRenderSystem; }
+
 	private:
+
+		// Render System
+		Renderer* m_pRenderSystem;
 
 	};
 }

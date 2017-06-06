@@ -141,6 +141,7 @@
     <ClCompile Include="..\source\Process.cpp" />
     <ClCompile Include="..\source\ProcessManager.cpp" />
     <ClCompile Include="..\source\Renderer.cpp" />
+    <ClCompile Include="..\source\ResourceCache.cpp" />
     <ClCompile Include="..\source\TransformComponent.cpp" />
     <ClCompile Include="..\source\ZipFile.cpp" />
   </ItemGroup>
@@ -154,6 +155,7 @@
     <ClInclude Include="..\source\Entity.h" />
     <ClInclude Include="..\source\Event.h" />
     <ClInclude Include="..\source\EventManager.h" />
+    <ClInclude Include="..\source\ZipFileResource.h" />
     <ClInclude Include="..\source\Interfaces.h" />
     <ClInclude Include="..\source\PhysicsComponent.h" />
     <ClInclude Include="..\source\Process.h" />
