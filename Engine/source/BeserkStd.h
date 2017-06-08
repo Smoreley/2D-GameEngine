@@ -1,9 +1,20 @@
 #pragma once
 
+#ifndef UNICODE
+#define UNICODE
+#endif
+
+#ifndef _UNICODE
+#define _UNICODE
+#endif
+
+#define SAFE_DELETE(p) {if (p) { delete(p) : (p)=NULL; }}
+#define SAFE_DELETE_ARRAY(x) {if(x) {delete [] x; x = NULL; }}
+
 // C RunTime Header Files
 #include <cstdlib>
 
-#include <memory>		// For weak/strong ptr
+#include <memory>			// For weak/strong ptr
 #include <algorithm>
 #include <string>
 #include <list>
@@ -13,43 +24,33 @@
 #include <assert.h>
 
 #include <iostream>
-//#include <stdio.h>
-//#include <tchar.h>
-//#include <utility>
-//#include "String.h"
+#include <tchar.h>			// needed for _T identifier
 
-#include <TinyXML2\tinyxml2.h>
+/* Include TinyXML2 */
+#include <TinyXML2/tinyxml2.h>
 
-using std::shared_ptr;
-using std::weak_ptr;
-using std::static_pointer_cast;
-using std::dynamic_pointer_cast;
+/* Include GLM (OpenGL Mathematics) */
+#include <glm/glm.hpp>
+#include <glm/vec2.hpp>
+#include <glm/vec3.hpp>
+#include <glm/vec4.hpp>
+#include <glm/matrix.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
+// Typedef variable types out
+typedef glm::vec2 vec2;
+typedef glm::vec3 vec3;
+typedef glm::vec4 vec4;
+typedef glm::mat4x4 mat4x4;
+
 
 using namespace std;
 using namespace tinyxml2;
 
 #include "Interfaces.h"
 
-
-// TODO: Moved to 
+// TODO: Include is moved to a different file
 #include "Actor.h"
-
-
-#define SAFE_DELETE(p) {if (p) { delete(p) : (p)=NULL; }}
-
-#define SAFE_DELETE_ARRAY(x) {if(x) {delete [] x; x = NULL; }}
-
-struct Options {
-	std::string m_name;
-
-	// Rendering
-	std::string m_Renderer;
-	bool m_FullScreen;
-
-	// Sound
-	float m_Volume;
-};
-
 
 // ue4 type stuff
 struct FGenericPlatformTypes {

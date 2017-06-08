@@ -2,14 +2,12 @@
 class ResourceHandle;
 class ResourceCache;
 
-
 /* Resource Extra Data */
 class IResourceExtraData
 {
 public:
 	virtual std::string VToString() = 0;
 };
-
 
 /* Class Resource */
 class Resource
@@ -46,7 +44,7 @@ private:
 
 typedef std::list<std::shared_ptr<ResourceHandle>> ResourceHandleList;
 typedef std::map<std::string, std::shared_ptr<ResourceHandle>> ResourceHandleMap;
-//typedef std::list<std::shared_ptr<IResourceLoader>> ResourceLoaderList;
+typedef std::list<std::shared_ptr<IResourceLoader>> ResourceLoaderList;
 
 /* Resource Cache */
 class ResourceCache
@@ -56,7 +54,7 @@ public:
 	virtual ~ResourceCache();
 
 	bool Init();
-	//void RegisterLoader(std::shared_ptr<IResourceLoader> loader);
+	void RegisterLoader(std::shared_ptr<IResourceLoader> loader);
 	std::shared_ptr<ResourceHandle> GetHandle(Resource* r);
 	int Preload(const std::string pattern, void(*progressCallback)(int, bool &));
 	std::vector<std::string> Match(const std::string pattern);
@@ -81,7 +79,7 @@ private:
 
 	ResourceHandleList m_lru;
 	ResourceHandleMap m_resources;
-	//ResourceLoaderList m_resourceLoaders;
+	ResourceLoaderList m_resourceLoaders;
 
 	//IResourceFile* m_pFile;
 

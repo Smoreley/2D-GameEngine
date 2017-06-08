@@ -1,11 +1,5 @@
 #pragma once
 
-struct vec3 {
-	float x;
-	float y;
-	float z;
-};
-
 class PhysicsComponent : public ActorComponent {
 public:
 	static const char* g_name;

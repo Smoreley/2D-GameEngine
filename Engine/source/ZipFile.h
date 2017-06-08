@@ -1,5 +1,4 @@
 #pragma once
-#include <stdio.h>
 
 typedef std::map<std::string, int> ZipContentsMap;
 
@@ -9,7 +8,7 @@ public:
 	ZipFile() { m_nEntries = 0, m_pFile = NULL, m_pDirData = NULL; }
 	virtual ~ZipFile() { End(); fclose(m_pFile); }
 
-	bool Init(const string &resourceFileName);
+	bool Init(const wstring &resourceFileName);
 	void End();
 
 	int GetNumFiles() const { return m_nEntries; }

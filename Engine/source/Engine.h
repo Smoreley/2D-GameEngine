@@ -3,6 +3,11 @@
 // Forward Declarations
 class Renderer;
 
+
+// Not yet created forward declars
+class IGameView;
+
+
 extern bool TestMe();
 
 namespace Beserk {
@@ -22,6 +27,14 @@ namespace Beserk {
 		void Test();
 
 		Renderer& GetRenderer(void) { return *m_pRenderSystem; }
+
+	protected:
+
+		
+		//typedef list<IGameView> GameViewList;
+		//GameViewList m_gameViews;					// Views that are attached to our game
+
+
 
 	private:
 

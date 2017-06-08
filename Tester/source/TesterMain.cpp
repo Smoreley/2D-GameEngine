@@ -10,7 +10,7 @@ bool TestMe() {
 	std::cout << "size of unsigned int: " << sizeof(unsigned int) << std::endl;
 	std::cout << "size of double: " << sizeof(double) << std::endl;
 
-
+	
 
 	// Start Engine
 	// Beserk::Engine->start();

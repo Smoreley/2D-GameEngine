@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
-    </Filter>
     <Filter Include="Header Files\Cache">
       <UniqueIdentifier>{d9418e34-6cbb-47fa-8bb6-fde00e59ca23}</UniqueIdentifier>
     </Filter>
@@ -48,6 +44,16 @@
     </Filter>
     <Filter Include="Header Files\Events">
       <UniqueIdentifier>{5d3874d1-64ab-46ae-b33f-041e23e77141}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Mics">
+      <UniqueIdentifier>{9efa8d17-1886-4359-bcfe-1c5321f3e68e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scene">
+      <UniqueIdentifier>{4e5112b4-fa99-4db2-917d-dd457ca77464}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +123,15 @@
     <ClInclude Include="..\source\ZipFileResource.h">
       <Filter>Header Files\Cache</Filter>
     </ClInclude>
+    <ClInclude Include="..\source\Options.h">
+      <Filter>Header Files\Mics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Scene.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\SceneNode.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\Engine.cpp">
@@ -156,6 +171,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\source\ResourceCache.cpp">
+      <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\ZipFIleResource.cpp">
       <Filter>Source Files\Cache</Filter>
     </ClCompile>
   </ItemGroup>
