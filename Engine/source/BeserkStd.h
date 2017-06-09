@@ -43,7 +43,6 @@ typedef glm::vec3 vec3;
 typedef glm::vec4 vec4;
 typedef glm::mat4x4 mat4x4;
 
-
 using namespace std;
 using namespace tinyxml2;
 

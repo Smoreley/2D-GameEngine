@@ -1,36 +1,40 @@
 #pragma once
 
-struct TransformData
-{
-	float pos_x;
-	float pos_y;
-	float pos_z;
+namespace Beserk {
 
-	float rot_y;
-	float rot_p;
-	float rot_r;
+	struct TransformData
+	{
+		float pos_x;
+		float pos_y;
+		float pos_z;
 
-	float scale_x;
-	float scale_y;
-	float scale_z;
+		float rot_y;
+		float rot_p;
+		float rot_r;
 
-	TransformData() : pos_x(0), pos_y(0), pos_z(0) {};
-};
+		float scale_x;
+		float scale_y;
+		float scale_z;
 
-class TransformComponent : public ActorComponent {
-public:
-	static const char* g_name;
+		TransformData() : pos_x(0), pos_y(0), pos_z(0) {};
+	};
 
-	TransformComponent(void) : m_transData() {}
+	class TransformComponent : public ActorComponent {
+	public:
+		static const char* g_name;
 
-	virtual const char* VGetName() const override { return TransformComponent::g_name; }
-	virtual bool VInit(XMLElement* pData) override;
-	virtual void VGenerateXML(XMLDocument* pDoc) override;
+		TransformComponent(void) : m_transData() {}
 
-	// Component Specific functions
-	void SetTransform() {}
-	void SetPosition() {}
+		virtual const char* VGetName() const override { return TransformComponent::g_name; }
+		virtual bool VInit(XMLElement* pData) override;
+		virtual void VGenerateXML(XMLDocument* pDoc) override;
 
-private:
-	TransformData m_transData;
-};
+		// Component Specific functions
+		void SetTransform() {}
+		void SetPosition() {}
+
+	private:
+		TransformData m_transData;
+	};
+
+}	// End-of Namespace

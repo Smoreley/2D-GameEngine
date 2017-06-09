@@ -3,10 +3,8 @@
 // Forward Declarations
 class Renderer;
 
-
 // Not yet created forward declars
 class IGameView;
-
 
 extern bool TestMe();
 
@@ -42,6 +40,6 @@ namespace Beserk {
 		Renderer* m_pRenderSystem;
 
 	};
-}
+}	// End-of Namespace
 
 extern Beserk::Engine *g_pEngine;

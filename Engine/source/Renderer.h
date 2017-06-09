@@ -29,4 +29,4 @@ namespace Beserk {
 		GLFWwindow* window;
 
 	};
-}
+}	// End-of Namespace

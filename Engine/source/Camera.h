@@ -2,6 +2,7 @@
 #include "IComponent.h"
 
 namespace Beserk {
+
 	class Camera : public IComponent
 	{
 	public:
@@ -24,4 +25,5 @@ namespace Beserk {
 	private:
 
 	};
-}
+
+}	// End-of Namespace

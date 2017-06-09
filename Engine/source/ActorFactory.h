@@ -1,62 +1,64 @@
 #pragma once
+namespace Beserk {
 
-template <class BaseType, class SubType>
-BaseType* GenericObjectCreationFunction(void) { return new SubType; }
+	template <class BaseType, class SubType>
+	BaseType* GenericObjectCreationFunction(void) { return new SubType; }
 
-/* Generic Factory */
-template <class BaseClass, class IdType>
-class GenericObjectFactory
-{
-public:
+	/* Generic Factory */
+	template <class BaseClass, class IdType>
+	class GenericObjectFactory
+	{
+	public:
 
-	template<class SubClass>
-	bool Register(IdType id) {
-		auto findIt = m_creationFunctions.find(id);
-		if (findIt == m_creationFunctions.end()) {
-			m_creationFunctions[id] = &GenericObjectCreationFunction<BaseClass, SubClass>;
-			return true;
+		template<class SubClass>
+		bool Register(IdType id) {
+			auto findIt = m_creationFunctions.find(id);
+			if (findIt == m_creationFunctions.end()) {
+				m_creationFunctions[id] = &GenericObjectCreationFunction<BaseClass, SubClass>;
+				return true;
+			}
+			return false;
 		}
-		return false;
-	}
 
-	BaseClass* Create(IdType id) {
-		auto findIt = m_creationFunctions.find(id);
-		if (findIt != m_creationFunctions.end()) {
-			ObjectCreationFunction pFunc = findIt->second;
-			return pFunc();
+		BaseClass* Create(IdType id) {
+			auto findIt = m_creationFunctions.find(id);
+			if (findIt != m_creationFunctions.end()) {
+				ObjectCreationFunction pFunc = findIt->second;
+				return pFunc();
+			}
+			return NULL;
 		}
-		return NULL;
-	}
 
 
-private:
-	typedef BaseClass* (*ObjectCreationFunction)(void);
-	map<IdType, ObjectCreationFunction> m_creationFunctions;
+	private:
+		typedef BaseClass* (*ObjectCreationFunction)(void);
+		map<IdType, ObjectCreationFunction> m_creationFunctions;
 
-};
+	};
 
-/* Actor Factory */
-// Puts Actors together with their components
-class ActorFactory
-{
-public:
-	ActorFactory(void);
+	/* Actor Factory */
+	// Puts Actors together with their components
+	class ActorFactory
+	{
+	public:
+		ActorFactory(void);
 
-	StrongActorPtr CreateActor(const char* actorResource,
-		tinyxml2::XMLElement* overrides,
-		const ActorId serversActorId);
+		StrongActorPtr CreateActor(const char* actorResource,
+			tinyxml2::XMLElement* overrides,
+			const ActorId serversActorId);
 
-	StrongActorPtr CreateActor(const char* actorResource, const ActorId id);		// Creates and actor
+		StrongActorPtr CreateActor(const char* actorResource, const ActorId id);		// Creates and actor
 
-	virtual StrongActorComponentPtr VCreateComponent(XMLElement* pData);
-	void ModifyActor(StrongActorPtr pActor, XMLElement* overrides);
+		virtual StrongActorComponentPtr VCreateComponent(XMLElement* pData);
+		void ModifyActor(StrongActorPtr pActor, XMLElement* overrides);
 
-protected:
-	GenericObjectFactory<ActorComponent, ComponentId> m_componentFactory;
+	protected:
+		GenericObjectFactory<ActorComponent, ComponentId> m_componentFactory;
 
-private:
-	ActorId m_lastActorId;
+	private:
+		ActorId m_lastActorId;
 
-	ActorId GetNextActorId(void) { ++m_lastActorId; return m_lastActorId; }
+		ActorId GetNextActorId(void) { ++m_lastActorId; return m_lastActorId; }
 
-};
+	};
+}	// End-of Namespace

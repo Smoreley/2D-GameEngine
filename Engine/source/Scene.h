@@ -1,20 +1,27 @@
+// The Scene Graph helps manage transformations
+// and in rendering only relevant things.
+
 #pragma once
 
 #include "BeserkStd.h"
 
-// Temp
-class IRender;
+namespace Beserk {
 
-class Scene {
-public:
-	Scene(shared_ptr<IRender> renderer);
-	virtual ~Scene();
+	// Temp
+	class IRender;
 
-	
-
-protected:
+	class Scene {
+	public:
+		Scene(shared_ptr<IRender> renderer);
+		virtual ~Scene();
 
 
-private:
 
-};
+	protected:
+
+
+	private:
+
+	};
+
+}	// End-of Namespace

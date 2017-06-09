@@ -1,22 +1,26 @@
 #pragma once
 #include "Process.h"
 
-typedef list<StrongProcessPtr> ProcessList;
+namespace Beserk {
 
-class ProcessManager {
-public:
-	~ProcessManager(void);
+	typedef list<StrongProcessPtr> ProcessList;
 
-	/* Interface Functions */
-	int UpdateProcesses(DeltaTime deltaMs);
-	WeakProcessPtr AttachProcess(StrongProcessPtr pProcess);
-	void AbortAllProcesses(bool immediate);
+	class ProcessManager {
+	public:
+		~ProcessManager(void);
 
-	unsigned int GetProcessCount(void) { return m_processes.size(); }
+		/* Interface Functions */
+		int UpdateProcesses(DeltaTime deltaMs);
+		WeakProcessPtr AttachProcess(StrongProcessPtr pProcess);
+		void AbortAllProcesses(bool immediate);
 
-private:
-	ProcessList m_processes;
+		unsigned int GetProcessCount(void) { return m_processes.size(); }
 
-	void ClearAllProcesses(void);
+	private:
+		ProcessList m_processes;
 
-};
+		void ClearAllProcesses(void);
+
+	};
+
+}	// End-of Namespace

@@ -24,9 +24,6 @@
     <Filter Include="Source Files\Display">
       <UniqueIdentifier>{d66d10c4-534e-4b97-9c8d-0a0b178bfee7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Display">
-      <UniqueIdentifier>{09be87c8-17cf-4ddf-ad85-bbba06809c06}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Old">
       <UniqueIdentifier>{2bb0fa31-556a-437b-b3a3-126bc448b5c0}</UniqueIdentifier>
     </Filter>
@@ -52,8 +49,17 @@
     <Filter Include="Header Files\Mics">
       <UniqueIdentifier>{9efa8d17-1886-4359-bcfe-1c5321f3e68e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Scene">
+    <Filter Include="Header Files\View">
+      <UniqueIdentifier>{09be87c8-17cf-4ddf-ad85-bbba06809c06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\View\Shader">
+      <UniqueIdentifier>{a62f8dbb-8ecf-4a26-877f-f161d70c2e69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\View\Scene">
       <UniqueIdentifier>{4e5112b4-fa99-4db2-917d-dd457ca77464}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\View\Scene\Helpers">
+      <UniqueIdentifier>{aa2eeca6-640f-437f-aed0-cad182edfa9d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -64,13 +70,10 @@
       <Filter>Header Files\Actor</Filter>
     </ClInclude>
     <ClInclude Include="..\source\Camera.h">
-      <Filter>Header Files\Display</Filter>
+      <Filter>Header Files\View</Filter>
     </ClInclude>
     <ClInclude Include="..\source\Engine.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\source\Shader.h">
-      <Filter>Header Files\Display</Filter>
     </ClInclude>
     <ClInclude Include="..\source\IComponent.h">
       <Filter>Header Files\Old</Filter>
@@ -100,7 +103,7 @@
       <Filter>Header Files\Actor\Components</Filter>
     </ClInclude>
     <ClInclude Include="..\source\Renderer.h">
-      <Filter>Header Files\Display</Filter>
+      <Filter>Header Files\View</Filter>
     </ClInclude>
     <ClInclude Include="..\source\PhysicsComponent.h">
       <Filter>Header Files\Actor\Components</Filter>
@@ -112,7 +115,7 @@
       <Filter>Header Files\Processes</Filter>
     </ClInclude>
     <ClInclude Include="..\source\View.h">
-      <Filter>Header Files\Display</Filter>
+      <Filter>Header Files\View</Filter>
     </ClInclude>
     <ClInclude Include="..\source\Event.h">
       <Filter>Header Files\Events</Filter>
@@ -127,10 +130,25 @@
       <Filter>Header Files\Mics</Filter>
     </ClInclude>
     <ClInclude Include="..\source\Scene.h">
-      <Filter>Header Files\Scene</Filter>
+      <Filter>Header Files\View\Scene</Filter>
     </ClInclude>
     <ClInclude Include="..\source\SceneNode.h">
-      <Filter>Header Files\Scene</Filter>
+      <Filter>Header Files\View\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Shader.h">
+      <Filter>Header Files\View\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Material.h">
+      <Filter>Header Files\View\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Texture.h">
+      <Filter>Header Files\View\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Raycast.h">
+      <Filter>Header Files\View\Scene\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\AxisAllignedBox.h">
+      <Filter>Header Files\View\Scene\Helpers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

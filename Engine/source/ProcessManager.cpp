@@ -1,93 +1,97 @@
 #include "BeserkStd.h"
 #include "ProcessManager.h"
 
-ProcessManager::~ProcessManager(void) {
-	ClearAllProcesses();
-}
+namespace Beserk {
 
-int ProcessManager::UpdateProcesses(DeltaTime deltaMs) {
+	ProcessManager::~ProcessManager(void) {
+		ClearAllProcesses();
+	}
 
-	ProcessList::iterator it = m_processes.begin();
-	while (it != m_processes.end()) {
-		// Grab the next process
-		StrongProcessPtr pCurrProcess = (*it);
+	int ProcessManager::UpdateProcesses(DeltaTime deltaMs) {
 
-		// Save th iterator and increment
-		ProcessList::iterator prevIt = it;
-		++it;
+		ProcessList::iterator it = m_processes.begin();
+		while (it != m_processes.end()) {
+			// Grab the next process
+			StrongProcessPtr pCurrProcess = (*it);
 
-		// Process is uninitialized so initialize it
-		if (pCurrProcess->GetState() == Process::UNINITIALIZED) {
-			pCurrProcess->VInit();
-		}
+			// Save th iterator and increment
+			ProcessList::iterator prevIt = it;
+			++it;
 
-		// Give the process an update tick
-		if (pCurrProcess->GetState() == Process::RUNNING) {
-			pCurrProcess->VUpdate(deltaMs);
-		}
+			// Process is uninitialized so initialize it
+			if (pCurrProcess->GetState() == Process::UNINITIALIZED) {
+				pCurrProcess->VInit();
+			}
 
-		// Check to see if the process is dead
-		if (pCurrProcess->IsDead()) {
+			// Give the process an update tick
+			if (pCurrProcess->GetState() == Process::RUNNING) {
+				pCurrProcess->VUpdate(deltaMs);
+			}
 
-			// Run the appropriate exit function
-			switch (pCurrProcess->GetState())
-			{
-			case Process::SUCCEEDED:
-			{
-				pCurrProcess->VSuccess();
+			// Check to see if the process is dead
+			if (pCurrProcess->IsDead()) {
 
-				StrongProcessPtr pChild = pCurrProcess->RemoveChild();
-				if (pChild) {
-					AttachProcess(pChild);
+				// Run the appropriate exit function
+				switch (pCurrProcess->GetState())
+				{
+				case Process::SUCCEEDED:
+				{
+					pCurrProcess->VSuccess();
+
+					StrongProcessPtr pChild = pCurrProcess->RemoveChild();
+					if (pChild) {
+						AttachProcess(pChild);
+					}
+					break;
 				}
-				break;
-			}
-			case Process::FAILED:
-			{
-				pCurrProcess->VFailed();
-				break;
-			}
-			case Process::ABORTED:
-			{
-				pCurrProcess->VAbort();
-				break;
-			}
+				case Process::FAILED:
+				{
+					pCurrProcess->VFailed();
+					break;
+				}
+				case Process::ABORTED:
+				{
+					pCurrProcess->VAbort();
+					break;
+				}
+				}
+
+				// Remove process and destroy it
+				m_processes.erase(prevIt);
 			}
 
-			// Remove process and destroy it
-			m_processes.erase(prevIt);
+		}
+
+		return 0;
+	}
+
+	WeakProcessPtr ProcessManager::AttachProcess(StrongProcessPtr pProcess) {
+		m_processes.push_front(pProcess);
+		return WeakProcessPtr(pProcess);
+	}
+
+	void ProcessManager::ClearAllProcesses(void) {
+		m_processes.clear();
+	}
+
+	void ProcessManager::AbortAllProcesses(bool immediate) {
+
+		ProcessList::iterator it = m_processes.begin();
+
+		while (it != m_processes.end()) {
+			ProcessList::iterator refIt = it;
+			++it;
+
+			StrongProcessPtr pProcess = *refIt;
+			if (pProcess->IsAlive()) {
+				pProcess->SetState(Process::ABORTED);
+				if (immediate) {
+					pProcess->VAbort();
+					m_processes.erase(refIt);
+				}
+			}
 		}
 
 	}
 
-	return 0;
-}
-
-WeakProcessPtr ProcessManager::AttachProcess(StrongProcessPtr pProcess) {
-	m_processes.push_front(pProcess);
-	return WeakProcessPtr(pProcess);
-}
-
-void ProcessManager::ClearAllProcesses(void) {
-	m_processes.clear();
-}
-
-void ProcessManager::AbortAllProcesses(bool immediate) {
-
-	ProcessList::iterator it = m_processes.begin();
-
-	while (it != m_processes.end()) {
-		ProcessList::iterator refIt = it;
-		++it;
-
-		StrongProcessPtr pProcess = *refIt;
-		if (pProcess->IsAlive()) {
-			pProcess->SetState(Process::ABORTED);
-			if (immediate) {
-				pProcess->VAbort();
-				m_processes.erase(refIt);
-			}
-		}
-	}
-
-}
+}	// End-of Namespace

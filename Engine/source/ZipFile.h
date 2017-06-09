@@ -1,37 +1,41 @@
 #pragma once
 
-typedef std::map<std::string, int> ZipContentsMap;
+namespace Beserk {
 
-class ZipFile
-{
-public:
-	ZipFile() { m_nEntries = 0, m_pFile = NULL, m_pDirData = NULL; }
-	virtual ~ZipFile() { End(); fclose(m_pFile); }
+	typedef std::map<std::string, int> ZipContentsMap;
 
-	bool Init(const wstring &resourceFileName);
-	void End();
+	class ZipFile
+	{
+	public:
+		ZipFile() { m_nEntries = 0, m_pFile = NULL, m_pDirData = NULL; }
+		virtual ~ZipFile() { End(); fclose(m_pFile); }
 
-	int GetNumFiles() const { return m_nEntries; }
-	string GetFileName(int i) const;
-	int GetFileLen(int i) const;
-	bool ReadFile(int i, void *pBuf);
+		bool Init(const wstring &resourceFileName);
+		void End();
 
-	// Multi-threaded decompression
-	bool ReadLargeFile(int i, void *pBuf, void(*progressCallback)(int, bool &));
+		int GetNumFiles() const { return m_nEntries; }
+		string GetFileName(int i) const;
+		int GetFileLen(int i) const;
+		bool ReadFile(int i, void *pBuf);
 
-	int Find(const string &path) const;
+		// Multi-threaded decompression
+		bool ReadLargeFile(int i, void *pBuf, void(*progressCallback)(int, bool &));
 
-	ZipContentsMap m_ZipContentsMap;
+		int Find(const string &path) const;
 
-private:
+		ZipContentsMap m_ZipContentsMap;
 
-	struct	TZipDirHeader;
-	struct	TZipDirFileHeader;
-	struct	TZipLocalHeader;
+	private:
 
-	FILE	*m_pFile;			// Zip File
-	char	*m_pDirData;		// Raw Data Buffer
-	int		m_nEntries;			// Number of Entries
+		struct	TZipDirHeader;
+		struct	TZipDirFileHeader;
+		struct	TZipLocalHeader;
 
-	const TZipDirFileHeader **m_papDir;
-};
+		FILE	*m_pFile;			// Zip File
+		char	*m_pDirData;		// Raw Data Buffer
+		int		m_nEntries;			// Number of Entries
+
+		const TZipDirFileHeader **m_papDir;
+	};
+
+}	// End-of Namespace
