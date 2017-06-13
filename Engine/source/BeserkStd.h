@@ -48,7 +48,7 @@ using namespace tinyxml2;
 
 #include "Interfaces.h"
 
-// TODO: Include is moved to a different file
+// TODO: Include should be moved to a different file
 #include "Actor.h"
 
 // ue4 type stuff

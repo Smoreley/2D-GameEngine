@@ -61,6 +61,9 @@
     <Filter Include="Header Files\View\Scene\Helpers">
       <UniqueIdentifier>{aa2eeca6-640f-437f-aed0-cad182edfa9d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Mics">
+      <UniqueIdentifier>{1d83beb1-3e89-4a12-97b9-e649f7d397ff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\Actor.h">
@@ -193,6 +196,9 @@
     </ClCompile>
     <ClCompile Include="..\source\ZipFIleResource.cpp">
       <Filter>Source Files\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Options.cpp">
+      <Filter>Source Files\Mics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

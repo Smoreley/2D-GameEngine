@@ -1,6 +1,9 @@
+/* Engine */
 #include "BeserkStd.h"
 #include "Renderer.h"
 #include "Engine.h"
+
+#include <GLFW\glfw3.h>
 
 namespace Beserk {
 
@@ -15,6 +18,7 @@ namespace Beserk {
 		m_pRenderSystem->Destory();
 		delete m_pRenderSystem;
 
+		cout << "I WAS CALLED" << endl;
 	}
 
 	bool Engine::Init() {
@@ -25,8 +29,27 @@ namespace Beserk {
 		return EXIT_SUCCESS;
 	}
 
+	bool Engine::Shutdown(void) {
+		cout << "Shutting Down Engine" << endl;
+
+		return EXIT_SUCCESS;
+	}
+
+	void Engine::Run(void) {
+
+		while (!glfwWindowShouldClose(GetRenderer().GetWindow())) {
+			glfwPollEvents();				// Poll for events
+
+			GetRenderer().TestRenderer();	// Render
+		}
+
+
+	}
+
+	// Testing function
 	void Engine::Test() {
 		TestMe();
 
 	}
+
 }	// End-of Namespace

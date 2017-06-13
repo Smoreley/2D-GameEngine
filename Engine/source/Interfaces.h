@@ -20,7 +20,6 @@ namespace Beserk {
 	typedef shared_ptr<ActorComponent> StrongActorComponentPtr;
 	typedef weak_ptr<ActorComponent> WeakActorComponentPtr;
 
-
 	template<class T>
 	struct SortBy_SharedPtr_Content {
 
@@ -30,7 +29,6 @@ namespace Beserk {
 			return *lhs < *rhs;
 		}
 	};
-
 
 	//// Game Logic Interface
 	//class IGameLogic

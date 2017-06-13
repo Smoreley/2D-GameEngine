@@ -12,12 +12,15 @@ namespace Beserk {
 		float m_brightness;
 		float m_gamma;
 
-
 		// Sound Options
 		float m_masterVol;
 		float m_effectVol;
 		float m_musicVol;
 
+		GameOptions();
+		~GameOptions() {}
+
+		void Init(const char* xmlFilePath);
 	};
 
 }	// End-of Namespace
