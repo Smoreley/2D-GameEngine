@@ -200,5 +200,8 @@
     <ClCompile Include="..\source\Options.cpp">
       <Filter>Source Files\Mics</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\EventManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

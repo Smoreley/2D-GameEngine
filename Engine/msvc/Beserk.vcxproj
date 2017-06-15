@@ -137,6 +137,7 @@
     <ClCompile Include="..\source\Camera.cpp" />
     <ClCompile Include="..\source\Engine.cpp" />
     <ClCompile Include="..\source\App.cpp" />
+    <ClCompile Include="..\source\EventManager.cpp" />
     <ClCompile Include="..\source\Options.cpp" />
     <ClCompile Include="..\source\PhysicsComponent.cpp" />
     <ClCompile Include="..\source\Process.cpp" />
