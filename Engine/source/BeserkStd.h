@@ -20,6 +20,7 @@
 #include <list>
 #include <vector>
 #include <queue>
+#include <stack>
 #include <map>
 #include <assert.h>
 
@@ -42,11 +43,14 @@ typedef glm::vec2 vec2;
 typedef glm::vec3 vec3;
 typedef glm::vec4 vec4;
 typedef glm::mat4x4 mat4x4;
+typedef glm::mat4x4 mat4;
 
 using namespace std;
 using namespace tinyxml2;
 
 #include "Interfaces.h"
+
+#include "GenericFactory.h"
 
 // TODO: Include should be moved to a different file
 #include "Actor.h"

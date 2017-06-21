@@ -3,6 +3,34 @@
 
 namespace Beserk {
 
+	static IEventManager* g_pEventMgr = nullptr;
+	GenericObjectFactory<IEventData, EventType> g_eventFactory;
+
+	// IEvent
+	IEventManager* IEventManager::Get(void) {
+		assert(g_pEventMgr);
+		return g_pEventMgr;
+	}
+
+	IEventManager::IEventManager(const char* pName, bool setAsGlobal) {
+		if (setAsGlobal) {
+			if (g_pEventMgr) {
+				cout << "ERROR: Attempting to create two global event managers" << endl;
+				delete g_pEventMgr;
+			}
+			g_pEventMgr = this;
+		}
+	}
+
+	IEventManager::~IEventManager(void) {
+		if (g_pEventMgr == this) {
+			g_pEventMgr = nullptr;
+		}
+	}
+
+
+
+	// Event Manager Implementation
 	EventManager::EventManager(const char* pName, bool setAsGlobal) : IEventManager(pName, setAsGlobal) {
 		m_activeQueue = 0;
 	}
@@ -48,6 +76,26 @@ namespace Beserk {
 		return success;
 	}
 
+	// VTriggerEvent
+	bool EventManager::VTriggerEvent(const IEventDataPtr& pEvent) const {
+		
+		bool processed = false;
+		auto findIt = m_eventListeners.find(pEvent->VGetEventType());
+		if (findIt != m_eventListeners.end()) {
+			const EventListenerList& eventListenerList = findIt->second;
+			for (EventListenerList::const_iterator it = eventListenerList.begin(); it != eventListenerList.end(); ++it) {
+				EventListenerDelegate listener = (*it);
+
+				cout << "Events: Sending Event " << string(pEvent->GetName()) << " to delegate" << endl;
+
+				listener(pEvent);	// Call the delegate
+				processed = true;
+			}
+		}
+		return processed;
+	}
+
+	// VQueueEvent
 	bool EventManager::VQueueEvent(const IEventDataPtr& pEvent) {
 		
 		if (!pEvent) {
@@ -68,6 +116,7 @@ namespace Beserk {
 		}
 	}
 
+	// AbortEvent
 	bool EventManager::VAbortEvent(const EventType& type, bool allOfType) {
 
 		bool success = false;
@@ -93,12 +142,23 @@ namespace Beserk {
 		return success;
 	}
 
+	// VUpdateEvent
 	bool EventManager::VUpdate(unsigned long maxMillis) {
-		//unsigned long currMs - GetTickCount();
+		//unsigned long currMs = GetTickCount();
+		//unsigned long maxMs = ((maxMillis == IEventManager::kINFINITE) ? (IEventManager::kINFINITE) : (currMs + maxMillis));
 
-		IEventDataPtr pRealtimeEvent;
+		//IEventDataPtr pRealtimeEvent;
+		//while (!m_realtimeEventQueue.try_pop(pRealtimeEvent)) {
+
+		//}
+
 
 		return false;
 	}
 
 }	// End-of Namespace
+
+
+long GetTickCount() {
+	return 1;
+}

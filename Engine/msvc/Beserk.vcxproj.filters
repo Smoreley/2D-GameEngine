@@ -64,6 +64,9 @@
     <Filter Include="Source Files\Mics">
       <UniqueIdentifier>{1d83beb1-3e89-4a12-97b9-e649f7d397ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Events">
+      <UniqueIdentifier>{93529dc1-70b8-4813-bd92-631ca5bffa8a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\Actor.h">
@@ -120,9 +123,6 @@
     <ClInclude Include="..\source\View.h">
       <Filter>Header Files\View</Filter>
     </ClInclude>
-    <ClInclude Include="..\source\Event.h">
-      <Filter>Header Files\Events</Filter>
-    </ClInclude>
     <ClInclude Include="..\source\EventManager.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
@@ -152,6 +152,12 @@
     </ClInclude>
     <ClInclude Include="..\source\AxisAllignedBox.h">
       <Filter>Header Files\View\Scene\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Events.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\GenericFactory.h">
+      <Filter>Header Files\Mics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -201,7 +207,10 @@
       <Filter>Source Files\Mics</Filter>
     </ClCompile>
     <ClCompile Include="..\source\EventManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Events.cpp">
+      <Filter>Source Files\Events</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

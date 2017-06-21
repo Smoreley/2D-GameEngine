@@ -8,9 +8,12 @@ namespace Beserk {
 	/* Typedefs */
 	typedef unsigned long EventType;
 	typedef shared_ptr<IEventData> IEventDataPtr;
-	typedef void (*EventListenerDelegate) (IEventData* d);		// Takes an IEventData variable and returns void (nothing)
+	typedef void (*EventListenerDelegate) (IEventDataPtr d);		// Takes an IEventData variable and returns void (nothing)
 	//typedef concurrent_queue<IEventDataPtr> ThreadSafeEventQueue;
 
+	extern GenericObjectFactory<IEventData, EventType> g_eventFactory;
+#define REGISTER_EVENT(eventClass) g_eventFactory.Register<eventClass>(eventClass::sk_EventType);
+#define CREATE_EVENT(eventType) g_eventFactory.Create(eventType);
 
 	/* IEventData - base type for event object hierachy */
 	class IEventData {
@@ -34,6 +37,9 @@ namespace Beserk {
 
 		virtual const EventType& VGetEventType(void) const = 0;
 		float GetTimeStamp(void) const { return m_timeStamp; }
+
+		virtual void VSerialize(std::ostream& out) const {}
+		virtual void VDeserialize(std::istream& in) {}
 
 	private:
 		const float m_timeStamp;
@@ -92,7 +98,7 @@ namespace Beserk {
 		EventQueue m_queues[EVENTMANAGER_NUM_QUEUES];
 		int m_activeQueue;
 
-		//ThreadSageEventQueue m_realtimeEventQueue;
+		//ThreadSafeEventQueue m_realtimeEventQueue;
 
 	};
 

@@ -30,6 +30,7 @@ namespace Beserk {
 		}
 	};
 
+
 	//// Game Logic Interface
 	//class IGameLogic
 	//{
@@ -50,8 +51,10 @@ namespace Beserk {
 	class Resource;
 	class IResourceFile;
 	class ResourceHandle;
-
-	/* Resource Loader Interface */
+	
+	//
+	// Resource Loader Interface
+	//
 	class IResourceLoader
 	{
 	public:
@@ -63,7 +66,9 @@ namespace Beserk {
 		virtual bool VLoadResource(char* rawBuffer, unsigned int rawSize, std::shared_ptr<ResourceHandle> handle) = 0;
 	};
 
-	/* Resoruce File Interface */
+	//
+	// Resoruce File Interface
+	//
 	class IResourceFile
 	{
 	public:
@@ -75,4 +80,30 @@ namespace Beserk {
 		virtual bool VUsingDevelopmentDirectories(void) const = 0;
 		virtual ~IResourceFile() {}
 	};
-}
+
+	class IRenderState
+	{
+	public:
+		virtual std::string ostringstream() = 0;
+	};
+
+	// IRenderer
+	class IRenderer
+	{
+	public:
+		virtual void VSetBackgroundColor(int bgA, int bgR, int bgG, int bgB) = 0;
+		virtual void VShutDown() = 0;
+		virtual void VPreRender() = 0;
+		virtual void VPostRender() = 0;
+
+		//virtual void VCalcLighting(Lights* lights, int maximumLights) = 0;
+		virtual void VSetWorldTransform(const mat4x4* m) = 0;
+		virtual void VSetViewTransform(const mat4x4* m) = 0;
+		virtual void VSetProjectionTransform(const mat4x4* m) = 0;
+
+		virtual shared_ptr<IRenderState> VPrepareAlphaPass() = 0;
+		virtual shared_ptr<IRenderState> VPrepareSkyBoxPass() = 0;
+		//virtual void VDrawLine(const vec3& from, const vec3& to, const Color& color) = 0;
+	};
+
+}	// End-of Namespace
