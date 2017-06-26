@@ -155,6 +155,7 @@
     <ClInclude Include="..\source\ActorFactory.h" />
     <ClInclude Include="..\source\AxisAllignedBox.h" />
     <ClInclude Include="..\source\BeserkStd.h" />
+    <ClInclude Include="..\source\CriticalSection.h" />
     <ClInclude Include="..\source\Engine.h" />
     <ClInclude Include="..\source\Camera.h" />
     <ClInclude Include="..\source\Entity.h" />

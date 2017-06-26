@@ -80,7 +80,6 @@ namespace Beserk {
 		//void SetRadius(const float radius) { m_props.m_radius = radius; }
 		//void SetMaterial(const Material& mat) { m_props.m_material = mat; }
 
-
 		//void SetVisible(bool vVisible, bool cascade = true);
 
 	protected:

@@ -67,6 +67,9 @@
     <Filter Include="Source Files\Events">
       <UniqueIdentifier>{93529dc1-70b8-4813-bd92-631ca5bffa8a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Multicore">
+      <UniqueIdentifier>{6b0e94b9-9e4c-4998-ac0f-606eef915b95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\Actor.h">
@@ -158,6 +161,9 @@
     </ClInclude>
     <ClInclude Include="..\source\GenericFactory.h">
       <Filter>Header Files\Mics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\CriticalSection.h">
+      <Filter>Header Files\Multicore</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

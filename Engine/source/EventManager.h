@@ -1,5 +1,8 @@
 #pragma once
 
+#include <strstream>
+//#include "CriticalSection.h"
+
 namespace Beserk {
 
 	/* Forward Declaration */

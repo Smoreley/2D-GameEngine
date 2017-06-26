@@ -1,6 +1,12 @@
 #include "BeserkStd.h"
 #include "EventManager.h"
 
+#include <string>
+
+long GetTickCount() {
+	return 1;
+}
+
 namespace Beserk {
 
 	static IEventManager* g_pEventMgr = nullptr;
@@ -27,7 +33,6 @@ namespace Beserk {
 			g_pEventMgr = nullptr;
 		}
 	}
-
 
 
 	// Event Manager Implementation
@@ -144,21 +149,69 @@ namespace Beserk {
 
 	// VUpdateEvent
 	bool EventManager::VUpdate(unsigned long maxMillis) {
-		//unsigned long currMs = GetTickCount();
-		//unsigned long maxMs = ((maxMillis == IEventManager::kINFINITE) ? (IEventManager::kINFINITE) : (currMs + maxMillis));
+		unsigned long currMs = GetTickCount();
+		unsigned long maxMs = ((maxMillis == IEventManager::kINFINITE) ? (IEventManager::kINFINITE) : (currMs + maxMillis));
 
-		//IEventDataPtr pRealtimeEvent;
+		IEventDataPtr pRealtimeEvent;
 		//while (!m_realtimeEventQueue.try_pop(pRealtimeEvent)) {
 
+		//	VQueueEvent(pRealtimeEvent);
+
+		//	currMs = GetTickCount();
+		//	if (maxMillis != IEventManager::kINFINITE) {
+		//		if (currMs >= maxMs) {
+		//			cout << "A realtime proccess is spamming the event manager" << endl;
+		//		}
+		//	}
 		//}
 
+		// swap active queues and clear the new queue after the swap
+		int queueToProcess = m_activeQueue;
+		m_activeQueue = (m_activeQueue + 1) % EVENTMANAGER_NUM_QUEUES;
+		m_queues[m_activeQueue].clear();
 
-		return false;
+		cout << " Processing Event Queue " << queueToProcess << ": " << ((unsigned long)m_queues[queueToProcess].size()) << endl;
+
+		// Process the queue
+		while (!m_queues[queueToProcess].empty()) {
+			// Pop the front of the queue
+			IEventDataPtr pEvent = m_queues[queueToProcess].front();
+			m_queues[queueToProcess].pop_front();
+
+			const EventType& eventTyoe = pEvent->VGetEventType();
+
+			// find all the delegate function registered for this event
+			auto findIt = m_eventListeners.find(eventTyoe);
+			if (findIt != m_eventListeners.end()) {
+				const EventListenerList& eventListeners = findIt->second;
+
+				// Call each listner
+				for (auto it = eventListeners.begin(); it != eventListeners.end(); ++it) {
+					EventListenerDelegate listener = (*it);
+					listener(pEvent);
+				}
+			}
+
+			// Check to see if time ran out
+			currMs = GetTickCount();
+			if (maxMillis != IEventManager::kINFINITE && currMs >= maxMs) {
+				cout << "Aborting event processing, time ran out" << endl;
+				break;
+			}
+		}
+
+		// If we couln't process all the events, push ramaining events to the new active queue.
+		// to perserve sequencing, go back-to-front
+		bool queueFlushed = (m_queues[queueToProcess].empty());
+		if (!queueFlushed) {
+			while (!m_queues[queueToProcess].empty()) {
+				IEventDataPtr pEvent = m_queues[queueToProcess].back();
+				m_queues[queueToProcess].pop_back();
+				m_queues[m_activeQueue].push_front(pEvent);
+			}
+		}
+
+		return queueFlushed;
 	}
 
 }	// End-of Namespace
-
-
-long GetTickCount() {
-	return 1;
-}
